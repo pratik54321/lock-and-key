@@ -4,17 +4,11 @@ lock = [
     [4, 6, 3],
     [5, 7, 8],
     [5, 6, 9],
-] # ans - 394
+]  # ans - 394
 
 
 def correct_but_in_wrong_pos_count(l1, l2):
-    count = 0
-    for p1, v1 in enumerate(l1):
-        for p2, v2 in enumerate(l2):
-            if p1 != p2 and v1 == v2:
-                count += 1
-
-    return count
+    return len([(p1, p2) for p1, v1 in enumerate(l1) for p2, v2 in enumerate(l2) if p1 != p2 and v1 == v2])
 
 
 def crack(key):
